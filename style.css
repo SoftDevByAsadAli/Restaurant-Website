@@ -1,0 +1,367 @@
+/* ====== GLOBAL RESET ====== */
+/* Removes default spacing so all browsers match */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ====== COLOR PALETTE (warm restaurant theme) ======
+   Deep brown:  #4a2c2a
+   Warm orange: #e07a30
+   Cream:       #fdf6ec
+   Dark text:   #333
+*/
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fdf6ec; /* soft cream background */
+}
+
+/* Reusable button */
+.btn {
+  display: inline-block;
+  background: #e07a30;       /* warm orange */
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #4a2c2a;       /* turns brown on hover */
+  transform: scale(1.05);
+}
+
+/* Section title used on every page */
+.section-title {
+  text-align: center;
+  font-size: 34px;
+  color: #4a2c2a;
+  margin-bottom: 30px;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #4a2c2a;       /* deep brown bar */
+  padding: 18px 50px;
+  position: sticky;          /* stays at top when scrolling */
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #e07a30;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #fdf6ec;
+  text-decoration: none;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+/* Hover and current-page link color */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e07a30;
+}
+
+/* ====== HERO (home page only) ====== */
+.hero {
+  /* A dark layer over a background photo so text is readable */
+  background: linear-gradient(rgba(74,44,42,0.6), rgba(74,44,42,0.6)),
+              url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;              /* 80% of screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* ====== INTRO SECTION (home) ====== */
+.intro {
+  padding: 70px 50px;
+  text-align: center;
+}
+
+.intro-text {
+  max-width: 700px;
+  margin: 0 auto 40px auto;  /* centers the paragraph */
+  font-size: 18px;
+}
+
+/* Grid of highlight cards */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.highlight-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;          /* keeps image corners rounded */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px); /* lifts up on hover */
+}
+
+.highlight-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.highlight-card h3 {
+  color: #4a2c2a;
+  margin: 15px 0 10px 0;
+}
+
+.highlight-card p {
+  padding: 0 15px 20px 15px;
+}
+
+/* ====== PAGE BANNER (menu, about, contact) ====== */
+.page-banner {
+  background: #4a2c2a;
+  color: #fdf6ec;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.page-banner h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+/* ====== MENU PAGE ====== */
+.menu {
+  padding: 70px 50px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-info {
+  padding: 20px;
+}
+
+.menu-info h3 {
+  color: #4a2c2a;
+  margin-bottom: 8px;
+}
+
+/* The price tag */
+.price {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e07a30;
+}
+
+/* ====== ABOUT PAGE ====== */
+.about {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 70px 50px;
+  flex-wrap: wrap;           /* stacks on small screens */
+}
+
+.about-image,
+.about-text {
+  flex: 1;                   /* share space equally */
+  min-width: 300px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  font-size: 17px;
+}
+
+/* The about section-title aligns left */
+.about-text .section-title {
+  text-align: left;
+}
+
+/* Values section */
+.values {
+  padding: 60px 50px;
+  background: #fff;
+}
+
+.value-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.value-card {
+  background: #fdf6ec;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+}
+
+.value-card h3 {
+  color: #4a2c2a;
+  margin-bottom: 10px;
+}
+
+/* ====== CONTACT PAGE ====== */
+.contact {
+  display: flex;
+  gap: 40px;
+  padding: 70px 50px;
+  flex-wrap: wrap;
+}
+
+.contact-info,
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info .section-title {
+  text-align: left;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+/* Form fields */
+.contact-form form {
+  display: flex;
+  flex-direction: column;    /* stacks fields vertically */
+}
+
+.contact-form label {
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+  color: #4a2c2a;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* Highlight field when clicked */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #e07a30;
+}
+
+/* ====== FOOTER (every page) ====== */
+.footer {
+  background: #4a2c2a;
+  color: #fdf6ec;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+/* Runs only on phones and small tablets */
+@media (max-width: 768px) {
+
+  /* Stack navbar items */
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  /* Less padding on small screens */
+  .intro,
+  .menu,
+  .about,
+  .contact,
+  .values {
+    padding: 40px 20px;
+  }
+}
